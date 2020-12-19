@@ -20,4 +20,10 @@ class UserController {
     @PostMapping
     fun createUser(@RequestBody userDTO: UserDTO) = userService.create(userDTO)
 
+    @DeleteMapping
+    fun deleteUser(@RequestBody userDTO: UserDTO) = userService.delete(userDTO)
+
+    @PutMapping
+    fun updateUser(@RequestBody userDTO: UserDTO) = userService.update(userDTO)
+
 }

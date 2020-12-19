@@ -26,5 +26,21 @@ class UserService {
         return mapper.map(userRepository.save(mapper.map(userDTO, User::class.java)), UserDTO::class.java)
     }
 
+    fun delete(userDTO: UserDTO) = userRepository.deleteById(userDTO.id)
 
+    fun update(userDTO: UserDTO) : UserDTO{
+        var user = userRepository.findById(userDTO.id)
+
+        if(user.isPresent){
+            var userDB = user.get()
+            if(userDB.password != userDTO.password){
+                userDB.password = hash(userDTO.password)
+            }
+            userDB.name = userDTO.name
+            userDB.email = userDTO.email
+            return mapper.map(userRepository.save(userDB), UserDTO::class.java)
+        }
+        throw Exception("user not exists")
+
+    }
 }
