@@ -17,8 +17,7 @@ class UserController {
     lateinit var userService:UserService
 
     @GetMapping
-    fun getUsers(): List<User> {
-        return userService.getUsers()
-    }
+    fun getUsers() = userService.getUsers()
+
 
 }
