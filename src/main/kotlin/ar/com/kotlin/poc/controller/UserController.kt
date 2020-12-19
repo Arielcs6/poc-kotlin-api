@@ -17,12 +17,7 @@ class UserController {
     @GetMapping
     fun getUsers() = userService.getUsers()
 
-/*
     @PostMapping
-    fun createUser() : UserDTO {
-
-    }
-*/
-
+    fun createUser(@RequestBody userDTO: UserDTO) = userService.create(userDTO)
 
 }

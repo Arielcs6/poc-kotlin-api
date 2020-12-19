@@ -1,15 +1,17 @@
 package ar.com.kotlin.poc.domain
 
+import org.hibernate.annotations.GenericGenerator
 import javax.persistence.*
 
 @Entity
-@Table(name="USERS")
+@Table(name="USER", schema="kotlinpoc", uniqueConstraints=[UniqueConstraint(columnNames=["NAME", "EMAIL"])])
 class User {
 
         @Id
-        @GeneratedValue
+        @GeneratedValue(generator = "uuid")
+        @GenericGenerator(name = "uuid", strategy = "uuid")
         @Column(name = "USER_ID")
-        val id: Int = 0
+        val id: String = ""
 
         @Column(name = "NAME", nullable = false)
         lateinit var name: String

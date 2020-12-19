@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.Id
 
 class UserDTO {
-    lateinit var name: String
-    lateinit var email: String
+    var name: String = ""
+    var password: String = ""
+    var email: String = ""
 }
