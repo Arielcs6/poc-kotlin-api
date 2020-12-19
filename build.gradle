@@ -32,6 +32,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.18'
     compile 'org.jetbrains.kotlin:kotlin-reflect:1.1.51'
+    compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.5'
     testCompile('org.springframework.boot:spring-boot-starter-test')
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 }
