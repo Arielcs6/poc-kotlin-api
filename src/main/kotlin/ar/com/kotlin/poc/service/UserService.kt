@@ -26,7 +26,7 @@ class UserService {
         return mapper.map(userRepository.save(mapper.map(userDTO, User::class.java)), UserDTO::class.java)
     }
 
-    fun delete(userDTO: UserDTO) = userRepository.deleteById(userDTO.id)
+    fun delete(userId: String) = userRepository.deleteById(userId)
 
     fun update(userDTO: UserDTO) : UserDTO{
         var user = userRepository.findById(userDTO.id)
