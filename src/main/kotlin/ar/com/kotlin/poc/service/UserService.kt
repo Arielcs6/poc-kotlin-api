@@ -17,8 +17,13 @@ class UserService {
     @Autowired
     lateinit var mapper: ModelMapper
 
-    fun getUsers(): List<UserDTO> {
+    fun find(): List<UserDTO> {
         return userRepository.findAll().map{user -> mapper.map(user, UserDTO::class.java)}
+    }
+
+    fun find(userId: String): UserDTO{
+        return mapper.map(userRepository.findById(userId)
+            .orElseThrow{Exception("user not exists")}, UserDTO::class.java)
     }
 
     fun create(userDTO: UserDTO) : UserDTO{

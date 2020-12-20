@@ -15,7 +15,10 @@ class UserController {
     lateinit var userService:UserService
 
     @GetMapping
-    fun getUsers() = userService.getUsers()
+    fun find() = userService.find()
+
+    @GetMapping("/{userId}")
+    fun find(@PathVariable userId: String) = userService.find(userId)
 
     @PostMapping
     fun createUser(@RequestBody userDTO: UserDTO) = userService.create(userDTO)
