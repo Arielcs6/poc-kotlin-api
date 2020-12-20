@@ -27,11 +27,12 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
     compile "org.springframework.boot:spring-boot-starter-web"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile group: 'org.postgresql', name: 'postgresql', version: '42.2.18'
-    compile 'org.jetbrains.kotlin:kotlin-reflect:1.1.51'
+    compile "org.jetbrains.kotlin:kotlin-reflect:1.1.51"
     compile group: 'org.modelmapper', name: 'modelmapper', version: '2.3.5'
     compile group: 'org.bitbucket.b_c', name: 'jose4j', version: '0.7.3'
     testCompile('org.springframework.boot:spring-boot-starter-test')

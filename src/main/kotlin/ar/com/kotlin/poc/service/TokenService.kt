@@ -1,5 +1,6 @@
 package ar.com.kotlin.poc.service
 
+import org.jose4j.jwk.RsaJsonWebKey
 import org.jose4j.jwt.JwtClaims
 import org.jose4j.jwt.consumer.JwtConsumer
 import org.jose4j.jwt.consumer.JwtConsumerBuilder
@@ -11,7 +12,7 @@ import org.jose4j.jws.JsonWebSignature
 @Service
 class TokenService {
 
-    val rsaJsonWebKey = RsaJwkGenerator.generateJwk(2048)
+    val rsaJsonWebKey: RsaJsonWebKey = RsaJwkGenerator.generateJwk(2048)
     val jwtConsumer: JwtConsumer = JwtConsumerBuilder().setVerificationKey(rsaJsonWebKey.key).setRequireExpirationTime().build()
 
     fun generateToken(userName: String): String{
@@ -29,5 +30,9 @@ class TokenService {
         jws.algorithmHeaderValue = AlgorithmIdentifiers.RSA_USING_SHA256
 
         return jws.compactSerialization
+    }
+
+    fun validateToken(token: String?): JwtClaims? {
+        return jwtConsumer.process(token).jwtClaims
     }
 }
