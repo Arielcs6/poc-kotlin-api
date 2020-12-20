@@ -1,7 +1,6 @@
 package ar.com.kotlin.poc.app.configuration
 
-import ar.com.kotlin.poc.security.util.filter.JWTAuthorizationFilter
-import org.modelmapper.ModelMapper
+import ar.com.kotlin.poc.security.filter.JWTAuthorizationFilter
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.http.HttpMethod

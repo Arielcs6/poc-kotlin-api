@@ -1,4 +1,4 @@
-package ar.com.kotlin.poc.security.util.filter
+package ar.com.kotlin.poc.security.filter
 
 import ar.com.kotlin.poc.service.TokenService
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,13 +9,7 @@ import javax.servlet.http.HttpServletResponse
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.util.StringUtils
-import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.authority.AuthorityUtils
-
-import org.springframework.security.core.GrantedAuthority
-
-
-
 
 class JWTAuthorizationFilter : OncePerRequestFilter() {
 
