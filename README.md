@@ -19,5 +19,6 @@ Prueba de concepto de un API hecha en Kotlin con Spring Boot.
 
 # TODO
 
+* Modelar errores
 * Guardar logs en base de datos no relacional.
 * Implementar esquema CI/CD con AWS.
