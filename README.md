@@ -13,6 +13,10 @@ Prueba de concepto de un API hecha en Kotlin con Spring Boot.
 
 * poc-kotlin.postman_collection.json
 
+# Instrucciones
+
+* Para ejecutar, correr la task de Gradle bootRun, pasar por variable de entorno la contraseña de la base de datos "spring.datasource.password"
+
 # TODO
 
 * Guardar logs en base de datos no relacional.
