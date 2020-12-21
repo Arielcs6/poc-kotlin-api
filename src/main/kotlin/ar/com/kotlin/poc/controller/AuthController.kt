@@ -1,13 +1,8 @@
 package ar.com.kotlin.poc.controller
 
 import ar.com.kotlin.poc.controller.dto.LoginDTO
-import ar.com.kotlin.poc.repository.UserRepository
 import ar.com.kotlin.poc.service.AuthService
-import ar.com.kotlin.poc.service.TokenService
-import org.jose4j.http.Response
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.http.HttpHeaders
-import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
